@@ -12,10 +12,15 @@ class AppColors {
 
   // Background and Fill Colors
   static const Color backgroundWhite = Color(0xFFFFFFFF);
-  static const Color fillBlue = Color(0xFFF3F8FE); // Arama çubuğu, pasif buton ve ikon arkaplanları
+  static const Color fillBlue = Color(0xFFF3F8FE);
+
+  // Arama çubuğu, pasif buton ve ikon arkaplanları
+  static const Color secondaryBackground = Color(0xFFF3F8FE);
 
   // System & Accent Colors
   static const Color heartRed = Color(0xFFEC5655);
   static const Color priceGreen = Color(0xFF2DD7A4);
   static const Color ratingStar = Color(0xFFF8D675);
+
+  static const Color darkGray = Color(0xFF4D5652);
 }
