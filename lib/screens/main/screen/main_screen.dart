@@ -1,4 +1,5 @@
 import 'package:aspen/constants/app_colors.dart';
+import 'package:aspen/screens/home/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    const Center(child: Text("Home Screen")),
+    const HomeScreen(),
     const Center(child: Text("Ticket Screen")),
     const Center(child: Text("Favorites Screen")),
     const Center(child: Text("Profile Screen")),
@@ -41,12 +42,20 @@ class _MainScreenState extends State<MainScreen> {
         statusBarIconBrightness: Brightness.dark,
       ),
       child: Scaffold(
+        backgroundColor: AppColors.backgroundWhite,
         body: _screens[_currentIndex],
         bottomNavigationBar: Container(
           padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
           decoration: BoxDecoration(
             color: AppColors.backgroundWhite,
             borderRadius: BorderRadius.circular(32),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.textPrimary.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, -2),
+              ),
+            ],
           ),
           child: SafeArea(
             child: Row(
