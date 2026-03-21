@@ -1,3 +1,4 @@
+import 'package:aspen/screens/onboarding/screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants/app_colors.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(),
         useMaterial3: true,
       ),
-      home: const Scaffold(body: Center(child: Text('Hello World'))),
+      home: const OnboardingScreen(),
     );
   }
 }
