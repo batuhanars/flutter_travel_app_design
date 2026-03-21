@@ -1,5 +1,6 @@
 import 'package:aspen/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 class MainScreen extends StatefulWidget {
@@ -34,23 +35,29 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _screens[_currentIndex],
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
-        decoration: BoxDecoration(
-          color: AppColors.backgroundWhite,
-          borderRadius: BorderRadius.circular(32),
-        ),
-        child: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _buildNavItem("assets/icons/home.svg", 0),
-              _buildNavItem("assets/icons/ticket.svg", 1),
-              _buildNavItem("assets/icons/liked.svg", 2),
-              _buildNavItem("assets/icons/profile.svg", 3),
-            ],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+      child: Scaffold(
+        body: _screens[_currentIndex],
+        bottomNavigationBar: Container(
+          padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
+          decoration: BoxDecoration(
+            color: AppColors.backgroundWhite,
+            borderRadius: BorderRadius.circular(32),
+          ),
+          child: SafeArea(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _buildNavItem("assets/icons/home.svg", 0),
+                _buildNavItem("assets/icons/ticket.svg", 1),
+                _buildNavItem("assets/icons/liked.svg", 2),
+                _buildNavItem("assets/icons/profile.svg", 3),
+              ],
+            ),
           ),
         ),
       ),
