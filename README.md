@@ -1,17 +1,47 @@
-# aspen
+# Aspen Travel App UI 🏔️
 
-A new Flutter project.
+Bu proje, Flutter temel bileşenlerini ve UI (Kullanıcı Arayüzü) geliştirme mantığını kavramak amacıyla yapılmış bir öğrenme projesidir. Tasarım şablonu için [Aspen Figma Tasarım Dosyası](https://www.figma.com/community/file/1091615514005406765)'ndan referans alınmış olup, UI bütünüyle bu tasarıma bakılarak Flutter koduna dönüştürülmüştür.
 
-## Getting Started
+## 🎯 Projenin Amacı
 
-This project is a starting point for a Flutter application.
+Projeyi geliştirirken asıl odak noktamız:
+- Tasarım dosyalarına bakarak modern bir arayüzü koda çevirme pratiği yapmak,
+- Sayfa yapıları, modüler parçalar (custom widgets) ve liste gösterimi mantıklarını kavramak,
+- Klasör hiyerarşisini düzgün bir biçimde (`screens`, `constants`, `entities`) kurgulamaktır.
 
-A few resources to get you started if this is your first Flutter project:
+## 🌟 Kullanılan Yapılar & Özellikler
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- **Özel Renk ve Font Yönetimi:** Uygulamanın renk paleti merkezi olarak `app_colors.dart` üzerinden kullanılmakta ve tipografi olarak **Montserrat** (`google_fonts` paketi) tercih edilmektedir.
+- **Dinamik Liste Gösterimi:** Arayüzdeki "Popüler" ve "Önerilen" gibi listeler, `mock_data.dart` dosyasındaki örnek veriler üzerinden `ListView.builder` kullanılarak ekrana yansıtılmıştır.
+- **Vektörel Medyalar:** Tasarımdaki ikon ve logolar kalite kaybı yaşamamak adına `flutter_svg` paketiyle entegre edilmiştir.
+- **Temel Yönlendirme:** Uygulama içi geçişler karmaşık yapılardan ziyade, basit ekran yönlendirmeleri ile kurgulanmıştır (Örn: Karşılama ekranından ana sayfaya geçiş). 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📁 Proje Yapısı Odak Noktası
+
+```text
+lib/
+ ├── constants/       # Renkler, boyutlar veya genel proje sabitleri
+ ├── entities/        # Dart veri modelleri (User vb.)
+ ├── screens/         # Modüler ekran dizinleri (home, detail, onboarding)
+ └── main.dart        # Kök widget ve tema konfigürasyonları
+```
+
+## 🚀 Başlarken
+
+Projeyi bilgisayarınıza indirip test etmek için:
+
+1. Depoyu bilgisayarınıza klonlayın:
+   ```bash
+   git clone https://github.com/kullanici_adiniz/aspen.git
+   ```
+
+2. Proje klasörüne girip paketleri yükleyin:
+   ```bash
+   cd aspen
+   flutter pub get
+   ```
+
+3. Emülatör veya cihazınızda çalıştırın:
+   ```bash
+   flutter run
+   ```
