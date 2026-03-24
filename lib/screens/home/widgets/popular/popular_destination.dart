@@ -8,7 +8,6 @@ class PopularDestination extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Column(
       children: [
         Row(
@@ -30,7 +29,7 @@ class PopularDestination extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         SizedBox(
-          height: size.height * 0.3,
+          height: 260,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: MockData.popularDestinations.length,

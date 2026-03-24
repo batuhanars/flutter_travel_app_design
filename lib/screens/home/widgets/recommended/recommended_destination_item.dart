@@ -14,8 +14,8 @@ class RecommendedDestinationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Container(
+      width: 148,
       padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         color: AppColors.backgroundWhite,
@@ -27,8 +27,8 @@ class RecommendedDestinationItem extends StatelessWidget {
         spacing: 6,
         children: [
           Container(
-            height: size.height * 0.10,
-            width: size.width * 0.4,
+            height: 100,
+            width: 140,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
@@ -70,13 +70,19 @@ class RecommendedDestinationItem extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-            children: [
-              Text(
-                name,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-              ),
-            ],
+          SizedBox(
+            width: 140,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
           ),
         ],
       ),

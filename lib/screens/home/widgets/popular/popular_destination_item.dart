@@ -16,7 +16,6 @@ class PopularDestinationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -28,7 +27,7 @@ class PopularDestinationItem extends StatelessWidget {
         );
       },
       child: Container(
-        width: size.width * 0.45,
+        width: 175,
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
@@ -48,6 +47,8 @@ class PopularDestinationItem extends StatelessWidget {
               child: Text(
                 name,
                 style: TextStyle(fontSize: 12, color: AppColors.textWhite),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             Row(

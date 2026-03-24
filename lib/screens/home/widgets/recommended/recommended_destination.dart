@@ -7,7 +7,6 @@ class RecommendedDestination extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -17,7 +16,7 @@ class RecommendedDestination extends StatelessWidget {
         ),
         SizedBox(height: 12),
         SizedBox(
-          height: size.height * 0.15,
+          height: 160,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: MockData.recommendedDestinations.length,
